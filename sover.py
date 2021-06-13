@@ -68,6 +68,29 @@ def solver(source):
                     return True
                 source[row][columns] = 0
     return False
+
+def input_sudoko():
+    start = 0
+    while start ==0:
+        temp = []
+        for i in range(9):
+            temp.append(input("inter the {} row '0' for empty(example 97012036): ".format(i+1)))
+        source = []
+        for i in temp:
+            source.append([int(x) for x in list(i)])
+        print("Is that your Soduku")
+        print_sudoko(source)
+        start = int(input("yes input 1 no input 0"))
+        print("Finish input")
+        print("checking the soduku")
+        print("Finish checking")
+    print("Start solver")
+    solver(source)
+    print("The solver have finish")
+    print("the result is ")
+    print_sudoko(source)
+if __name__ =="__main__":
+    input_sudoko()
 #print_sudoko(source)
 #solver(temp)
 #print_sudoko(temp)
